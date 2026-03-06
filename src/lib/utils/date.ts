@@ -1,1 +1,1 @@
-export function formatDate() { return "; }
+export function formatDate() { return ""; }
