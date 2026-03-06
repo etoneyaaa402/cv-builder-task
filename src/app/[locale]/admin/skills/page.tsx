@@ -1,0 +1,1 @@
+export default function AdminSkillsPage() { return null; }
