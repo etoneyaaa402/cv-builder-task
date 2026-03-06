@@ -1,0 +1,1 @@
+export default function AdminLanguagesPage() { return null; }
