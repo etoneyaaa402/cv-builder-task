@@ -2,7 +2,6 @@
 
 import { redirect } from "next/navigation";
 import { getSession } from "./tokens";
-import { ROLE_HOME } from "@/lib/constants/roles";
 import type { SessionData } from "@/types/auth";
 
 export async function saveSession(data: SessionData) {

@@ -2,7 +2,7 @@ import { PUBLIC_ROUTES } from "@/lib/constants/routes";
 import { UserRole } from "@/lib/constants/roles";
 
 export function isPublicPath(pathname: string): boolean {
-    return PUBLIC_ROUTES.some((route) => pathname.endsWith(route));
+    return PUBLIC_ROUTES.some((route) => pathname === route);
 }
 
 export function isAdminPath(pathname: string): boolean {
