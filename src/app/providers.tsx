@@ -3,16 +3,26 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { setAuthToken, clearAuthToken } from "@/lib/graphql/client";
 
 type Props = {
     children: ReactNode;
     locale: string;
-    messages: Record<string, any>;
+    messages: Record<string, unknown>;
+    accessToken?: string;
 };
 
-export function Providers({ children, locale, messages }: Props) {
+export function Providers({ children, locale, messages, accessToken }: Props) {
     const [queryClient] = useState(() => new QueryClient());
+
+    useEffect(() => {
+        if (accessToken) {
+            setAuthToken(accessToken);
+        } else {
+            clearAuthToken();
+        }
+    }, [accessToken]);
 
     return (
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
