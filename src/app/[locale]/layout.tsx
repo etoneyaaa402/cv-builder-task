@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type {Metadata} from "next";
+import {Inter} from "next/font/google";
 import "../globals.css";
-import { Providers } from "../providers";
+import {Providers} from "../providers";
+import {getMessages} from 'next-intl/server';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "CV Builder",
@@ -11,21 +12,23 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  children,
-  params,
-}: {
+                                           children,
+                                           params,
+                                         }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const {locale} = await params;
+
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
-        <Providers locale={locale} messages={{}}>
-          {children}
-        </Providers>
-      </body>
+    <body className={inter.className}>
+    <Providers locale={locale} messages={messages}>
+      {children}
+    </Providers>
+    </body>
     </html>
   );
 }

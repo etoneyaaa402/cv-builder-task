@@ -1,14 +1,21 @@
-import { getRequestConfig } from 'next-intl/server';
+import {getRequestConfig} from 'next-intl/server';
 
-export default getRequestConfig(async ({ requestLocale }) => {
+export default getRequestConfig(async ({requestLocale}) => {
   const locale = await requestLocale || 'en';
-
   let messages;
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    const [mainMessages, authMessages] = await Promise.all([
+      import(`@/messages/${locale}.json`),
+      import(`@/messages/${locale}/auth.json`)
+    ]);
+    messages = {
+      ...mainMessages.default,
+      ...authMessages.default
+    };
   } catch (error) {
     console.error(`Failed to load ${locale} messages:`, error);
-    messages = (await import(`../../messages/en.json`)).default;
+    const fallbackMessages = await import(`@/messages/en.json`);
+    messages = fallbackMessages.default;
   }
 
   return {
