@@ -7,27 +7,27 @@ import { Providers } from "../providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CV Builder",
-  description: "Curriculum Vitae Management Platform",
+    title: "CV Builder",
+    description: "Curriculum Vitae Management Platform",
 };
 
 export default async function RootLayout({
-  children,
-  params,
+    children,
+    params,
 }: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  const messages = await getMessages();
+    const { locale } = await params;
+    const messages = await getMessages();
 
-  return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
-        <Providers locale={locale} messages={messages}>
-          {children}
-        </Providers>
-      </body>
-    </html>
-  );
+    return (
+        <html lang={locale} suppressHydrationWarning>
+            <body className={inter.className}>
+                <Providers locale={locale} messages={messages}>
+                    {children}
+                </Providers>
+            </body>
+        </html>
+    );
 }

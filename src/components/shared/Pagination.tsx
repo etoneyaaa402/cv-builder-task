@@ -1,1 +1,3 @@
-export function Pagination() { return null; }
+export function Pagination() {
+    return null;
+}

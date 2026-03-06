@@ -1,1 +1,3 @@
-export function UserSidebar() { return null; }
+export function UserSidebar() {
+    return null;
+}

@@ -1,1 +1,3 @@
-export default function CvsPage() { return null; }
+export default function CvsPage() {
+    return null;
+}

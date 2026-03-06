@@ -1,1 +1,3 @@
-export function useAuth() { return {}; }
+export function useAuth() {
+    return {};
+}

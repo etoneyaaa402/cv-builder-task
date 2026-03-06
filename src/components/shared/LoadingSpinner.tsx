@@ -1,1 +1,3 @@
-export function LoadingSpinner() { return null; }
+export function LoadingSpinner() {
+    return null;
+}

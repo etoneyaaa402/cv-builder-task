@@ -1,1 +1,3 @@
-export function AdminHeader() { return null; }
+export function AdminHeader() {
+    return null;
+}

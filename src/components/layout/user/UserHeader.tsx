@@ -1,1 +1,3 @@
-export function UserHeader() { return null; }
+export function UserHeader() {
+    return null;
+}

@@ -1,1 +1,3 @@
-export default function AdminCvEditPage() { return null; }
+export default function AdminCvEditPage() {
+    return null;
+}

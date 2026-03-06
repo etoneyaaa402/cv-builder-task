@@ -1,1 +1,3 @@
-export function SortDropdown() { return null; }
+export function SortDropdown() {
+    return null;
+}

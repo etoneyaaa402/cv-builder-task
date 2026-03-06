@@ -1,1 +1,3 @@
-export function SkillTable() { return null; }
+export function SkillTable() {
+    return null;
+}

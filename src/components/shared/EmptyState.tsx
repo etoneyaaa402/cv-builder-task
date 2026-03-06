@@ -1,1 +1,3 @@
-export function EmptyState() { return null; }
+export function EmptyState() {
+    return null;
+}

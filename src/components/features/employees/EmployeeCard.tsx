@@ -1,1 +1,3 @@
-export function EmployeeCard() { return null; }
+export function EmployeeCard() {
+    return null;
+}

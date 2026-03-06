@@ -1,1 +1,3 @@
-export function AdminNav() { return null; }
+export function AdminNav() {
+    return null;
+}

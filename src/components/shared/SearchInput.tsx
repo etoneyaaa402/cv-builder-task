@@ -1,1 +1,3 @@
-export function SearchInput() { return null; }
+export function SearchInput() {
+    return null;
+}

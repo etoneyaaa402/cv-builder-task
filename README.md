@@ -37,6 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Internationalization (i18n)
 
 The application supports English and Polish.
+
 - `/` - English (Default)
 - `/en` - English (Redirects to `/`)
 - `/pl` - Polish
@@ -72,12 +73,12 @@ Coverage is collected from `src/**/*.{ts,tsx}`, excluding generated files and pa
 Use the custom `render` from `src/test-utils.tsx` — it wraps components with all app providers (TanStack Query, next-intl, next-themes):
 
 ```tsx
-import { render, screen } from '@/test-utils';
-import { MyComponent } from '@/components/features/MyComponent';
+import { render, screen } from "@/test-utils";
+import { MyComponent } from "@/components/features/MyComponent";
 
-it('renders', () => {
-  render(<MyComponent />);
-  expect(screen.getByText('...')).toBeInTheDocument();
+it("renders", () => {
+    render(<MyComponent />);
+    expect(screen.getByText("...")).toBeInTheDocument();
 });
 ```
 

@@ -1,1 +1,3 @@
-export function ThemeToggle() { return null; }
+export function ThemeToggle() {
+    return null;
+}

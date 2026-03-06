@@ -1,1 +1,3 @@
-export function ProfileLanguages() { return null; }
+export function ProfileLanguages() {
+    return null;
+}

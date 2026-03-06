@@ -1,1 +1,3 @@
-export function CVPreview() { return null; }
+export function CVPreview() {
+    return null;
+}

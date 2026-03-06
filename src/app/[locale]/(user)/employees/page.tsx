@@ -1,1 +1,3 @@
-export default function EmployeesPage() { return null; }
+export default function EmployeesPage() {
+    return null;
+}

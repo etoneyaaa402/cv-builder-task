@@ -1,1 +1,3 @@
-export function CVProjectsManager() { return null; }
+export function CVProjectsManager() {
+    return null;
+}
