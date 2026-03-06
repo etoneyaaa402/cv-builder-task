@@ -8,7 +8,7 @@ const customConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^next-intl$': '<rootDir>/src/__mocks__/next-intl.tsx',
+    '^next-intl(.*)$': '<rootDir>/src/__mocks__/next-intl.tsx',
   },
   testPathIgnorePatterns: ['<rootDir>/e2e/', '<rootDir>/.next/'],
   coverageProvider: 'v8',
