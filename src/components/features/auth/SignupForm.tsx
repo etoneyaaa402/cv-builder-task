@@ -1,1 +1,3 @@
-export function SignupForm() { return null; }
+export function SignupForm() {
+    return null;
+}

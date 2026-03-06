@@ -1,1 +1,3 @@
-export function CVForm() { return null; }
+export function CVForm() {
+    return null;
+}

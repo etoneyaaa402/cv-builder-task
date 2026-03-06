@@ -1,1 +1,3 @@
-export function Logo() { return null; }
+export function Logo() {
+    return null;
+}

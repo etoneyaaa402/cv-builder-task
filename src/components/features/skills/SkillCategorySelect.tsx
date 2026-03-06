@@ -1,1 +1,3 @@
-export function SkillCategorySelect() { return null; }
+export function SkillCategorySelect() {
+    return null;
+}

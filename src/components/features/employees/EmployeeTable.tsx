@@ -1,1 +1,3 @@
-export function EmployeeTable() { return null; }
+export function EmployeeTable() {
+    return null;
+}

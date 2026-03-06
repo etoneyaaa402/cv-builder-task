@@ -1,1 +1,3 @@
-export function AdminSidebar() { return null; }
+export function AdminSidebar() {
+    return null;
+}

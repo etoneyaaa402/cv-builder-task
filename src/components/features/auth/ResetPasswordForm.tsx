@@ -1,1 +1,3 @@
-export function ResetPasswordForm() { return null; }
+export function ResetPasswordForm() {
+    return null;
+}

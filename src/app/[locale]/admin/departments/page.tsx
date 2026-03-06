@@ -1,1 +1,3 @@
-export default function AdminDepartmentsPage() { return null; }
+export default function AdminDepartmentsPage() {
+    return null;
+}

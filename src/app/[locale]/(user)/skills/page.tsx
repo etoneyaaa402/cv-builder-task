@@ -1,1 +1,3 @@
-export default function SkillsPage() { return null; }
+export default function SkillsPage() {
+    return null;
+}

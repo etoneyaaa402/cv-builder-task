@@ -1,1 +1,3 @@
-export function DepartmentForm() { return null; }
+export function DepartmentForm() {
+    return null;
+}

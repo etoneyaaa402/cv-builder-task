@@ -1,1 +1,3 @@
-export default function LanguagesPage() { return null; }
+export default function LanguagesPage() {
+    return null;
+}

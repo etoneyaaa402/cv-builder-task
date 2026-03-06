@@ -1,1 +1,3 @@
-export default function CvPreviewPage() { return null; }
+export default function CvPreviewPage() {
+    return null;
+}

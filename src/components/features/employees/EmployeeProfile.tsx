@@ -1,1 +1,3 @@
-export function EmployeeProfile() { return null; }
+export function EmployeeProfile() {
+    return null;
+}

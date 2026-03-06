@@ -1,1 +1,3 @@
-export function LanguageForm() { return null; }
+export function LanguageForm() {
+    return null;
+}

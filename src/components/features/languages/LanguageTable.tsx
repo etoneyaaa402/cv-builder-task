@@ -1,1 +1,3 @@
-export function LanguageTable() { return null; }
+export function LanguageTable() {
+    return null;
+}
