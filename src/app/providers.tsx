@@ -3,9 +3,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from 'next-themes';
 import { NextIntlClientProvider } from 'next-intl';
-import { ReactNode } from 'react';
-
-const queryClient = new QueryClient();
+import { ReactNode, useState } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -14,6 +12,8 @@ type Props = {
 };
 
 export function Providers({ children, locale, messages }: Props) {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <NextIntlClientProvider locale={locale} messages={messages}>
