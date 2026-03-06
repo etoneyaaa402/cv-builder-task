@@ -1,1 +1,3 @@
-export function PositionForm() { return null; }
+export function PositionForm() {
+    return null;
+}

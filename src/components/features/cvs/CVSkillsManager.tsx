@@ -1,1 +1,3 @@
-export function CVSkillsManager() { return null; }
+export function CVSkillsManager() {
+    return null;
+}

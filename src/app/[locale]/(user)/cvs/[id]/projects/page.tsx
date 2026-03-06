@@ -1,1 +1,3 @@
-export default function CvProjectsPage() { return null; }
+export default function CvProjectsPage() {
+    return null;
+}

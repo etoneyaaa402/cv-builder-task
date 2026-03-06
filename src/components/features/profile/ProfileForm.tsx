@@ -1,1 +1,3 @@
-export function ProfileForm() { return null; }
+export function ProfileForm() {
+    return null;
+}

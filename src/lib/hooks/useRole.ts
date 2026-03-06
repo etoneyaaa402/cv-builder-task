@@ -1,1 +1,3 @@
-export function useRole() { return {}; }
+export function useRole() {
+    return {};
+}

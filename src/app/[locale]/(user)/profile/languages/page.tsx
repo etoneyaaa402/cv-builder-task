@@ -1,1 +1,3 @@
-export default function ProfileLanguagesPage() { return null; }
+export default function ProfileLanguagesPage() {
+    return null;
+}

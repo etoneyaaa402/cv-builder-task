@@ -1,1 +1,3 @@
-export default function SignupPage() { return null; }
+export default function SignupPage() {
+    return null;
+}

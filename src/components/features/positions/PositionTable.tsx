@@ -1,1 +1,3 @@
-export function PositionTable() { return null; }
+export function PositionTable() {
+    return null;
+}

@@ -1,1 +1,3 @@
-export function SkillForm() { return null; }
+export function SkillForm() {
+    return null;
+}

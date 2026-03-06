@@ -1,1 +1,3 @@
-export default function CvSkillsPage() { return null; }
+export default function CvSkillsPage() {
+    return null;
+}
