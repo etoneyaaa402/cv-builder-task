@@ -2,5 +2,16 @@
     "Index": {
         "welcome": "Welcome to CV Builder",
         "hello": "Hello from English!"
+    },
+    "Auth": {
+        "email": "Email",
+        "password": "Password",
+        "log_in": "Log In",
+        "sign_up": "Sign Up",
+        "forgot_password": "Forgot Password?",
+        "welcome_back": "Welcome Back",
+        "glad_to_see_you": "We are glad to see you! Log in to continue",
+        "wrong_email": "Please enter a valid email address.",
+        "wrong_password": "Password must be at least 6 characters long."
     }
 }

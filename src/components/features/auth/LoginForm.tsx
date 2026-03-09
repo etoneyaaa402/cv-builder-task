@@ -1,5 +1,6 @@
 "use client"
 
+import {useMemo} from "react"
 import {zodResolver} from "@hookform/resolvers/zod"
 import {useForm} from "react-hook-form"
 import * as z from "zod"
@@ -18,16 +19,20 @@ import {useTranslations} from "next-intl";
 export function LoginForm() {
   const t = useTranslations('Auth');
 
-  const formSchema = z.object({
-    email: z.string().email({
-      message: t('wrong_email'),
-    }),
-    password: z.string().min(6, {
-      message: t('wrong_password'),
-    }),
-  })
+  const formSchema = useMemo(() => {
+    return z.object({
+      email: z.string().email({
+        message: t('wrong_email'),
+      }),
+      password: z.string().min(6, {
+        message: t('wrong_password'),
+      }),
+    })
+  }, [t])
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  type FormValues = z.infer<typeof formSchema>;
+
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
@@ -35,7 +40,7 @@ export function LoginForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: FormValues) {
     console.log("Data:", values)
   }
 
@@ -52,7 +57,8 @@ export function LoginForm() {
                   <FormLabel hidden>{t('email')}</FormLabel>
                   <FormControl>
                     <Input
-                      className="text-[16px] p-[12px] rounded-none"
+                      size="default"
+                      variant="default"
                       type="email"
                       placeholder={t('email')}
                       {...field}
@@ -70,7 +76,8 @@ export function LoginForm() {
                   <FormLabel hidden>{t('password')}</FormLabel>
                   <FormControl>
                     <Input
-                      className="text-[16px] p-[12px] rounded-none"
+                      size="default"
+                      variant="default"
                       type="password"
                       placeholder={t('password')}
                       {...field}
@@ -84,8 +91,8 @@ export function LoginForm() {
           <div className="w-full flex justify-center">
             <Button
               type="submit"
-              variant="destructive"
-              className="text-[#ffffff] py-[16px] w-[280px] uppercase border-0 text-[14px] rounded-[999px]"
+              variant="redPrimary"
+              size="redButton"
             >
               {t('log_in')}
             </Button>
