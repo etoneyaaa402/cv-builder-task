@@ -1,17 +1,10 @@
 import { GraphQLClient } from "graphql-request";
 
-const ENDPOINT =
-    process.env.NEXT_PUBLIC_GRAPHQL_URL ?? "http://localhost:3001/api/graphql";
-
-export const gqlClient = new GraphQLClient(ENDPOINT);
-
-export function setAuthToken(token: string) {
-    gqlClient.setHeader("Authorization", `Bearer ${token}`);
-}
-
-export function clearAuthToken() {
-    gqlClient.setHeader("Authorization", "");
-}
+// All client-side GraphQL requests are routed through the Next.js proxy at
+// /api/graphql. The proxy reads the iron-session cookie server-side and
+// injects the Authorization header before forwarding to the backend.
+// This keeps tokens off the client entirely.
+const gqlClient = new GraphQLClient("/api/graphql");
 
 export function fetcher<TData, TVariables extends Record<string, unknown>>(
     query: string,

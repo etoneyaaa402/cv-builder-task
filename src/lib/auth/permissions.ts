@@ -6,7 +6,7 @@ export function isPublicPath(pathname: string): boolean {
 }
 
 export function isAdminPath(pathname: string): boolean {
-    return pathname.includes("/admin");
+    return pathname === "/admin" || pathname.startsWith("/admin/");
 }
 
 export function canAccess(pathname: string, role: UserRole): boolean {
