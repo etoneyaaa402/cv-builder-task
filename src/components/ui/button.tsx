@@ -17,9 +17,9 @@ const buttonVariants = cva(
                 secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
-                redPrimary: "bg-red-primary rounded-[999px] uppercase text-[#ffffff] border-none",
-                transparent: "bg-transparent text-light-gray uppercase rounded-[999px] border-0",
-                redUnderline_inactive: "bg-transparent uppercase text-red-underline-text border-0 rounded-0",
+                redPrimary: "bg-red-primary rounded-full text-3.5 text-white uppercase border-none",
+                transparent: "bg-transparent text-light-gray text-3.5 uppercase rounded-full border-0",
+                redUnderline_inactive: "bg-transparent uppercase text-red-underline-text border-0",
                 redUnderline_active: "bg-transparent border-0 border-b border-red-primary border-b-2 rounded-[0] uppercase text-red-primary "
             },
             size: {
@@ -27,8 +27,8 @@ const buttonVariants = cva(
                 sm: "h-8 rounded-md px-3 text-xs",
                 lg: "h-10 rounded-md px-8",
                 icon: "h-9 w-9",
-                redButton: "py-[16px] w-[220px]",
-                headerButtons: "py-[16px] w-[150px] "
+                redButton: "py-4 w-55",
+                headerButtons: "py-4 w-37.5"
             },
         },
         defaultVariants: {

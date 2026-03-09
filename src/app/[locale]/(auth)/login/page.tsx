@@ -11,12 +11,12 @@ export default function LoginPage() {
     <div className="h-screen overflow-hidden">
       <Header mode="login" />
       <main className="flex justify-center items-center h-full">
-        <div className="max-w-[560px] w-full p-[20px]">
-          <div className="pb-[35px]">
-            <h1 className="text-center text-[34px]">{t("welcome_back")}</h1>
-            <p className="text-center">{t("glad_to_see_you")}</p>
+        <div className="max-w-140 w-full p-5">
+          <div className="pb-8.75">
+            <h1 className="text-[34px] text-basic-text text-center pb-6.5">{t("welcome_back")}</h1>
+            <p className="text-center text-basic-text">{t("glad_to_see_you")}</p>
           </div>
-          <div className="pb-[10px]">
+          <div className="pb-2">
             <LoginForm />
           </div>
           <div className="w-full flex justify-center">
@@ -25,7 +25,7 @@ export default function LoginPage() {
               variant="transparent"
               size="redButton"
             >
-              <Link href="/forgot-password">{t("forgot_password")}</Link>
+              <Link className="text-light-gray" href="/forgot-password">{t("forgot_password")}</Link>
             </Button>
           </div>
         </div>

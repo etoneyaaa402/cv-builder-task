@@ -48,18 +48,19 @@ export function LoginForm() {
     <div>
       <Form {...form}>
         <form noValidate onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="flex flex-col gap-[20px] pb-[60px]">
+          <div className="flex flex-col gap-5 pb-15">
             <FormField
               control={form.control}
               name="email"
               render={({field}) => (
                 <FormItem>
-                  <FormLabel hidden>{t('email')}</FormLabel>
+                  <FormLabel className="sr-only">{t('email')}</FormLabel>
                   <FormControl>
                     <Input
                       size="default"
                       variant="default"
                       type="email"
+                      autoComplete="email"
                       placeholder={t('email')}
                       {...field}
                     />
@@ -73,12 +74,13 @@ export function LoginForm() {
               name="password"
               render={({field}) => (
                 <FormItem>
-                  <FormLabel hidden>{t('password')}</FormLabel>
+                  <FormLabel className="sr-only">{t('password')}</FormLabel>
                   <FormControl>
                     <Input
                       size="default"
                       variant="default"
                       type="password"
+                      autoComplete="current-password"
                       placeholder={t('password')}
                       {...field}
                     />
