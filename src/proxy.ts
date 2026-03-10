@@ -26,7 +26,7 @@ export async function proxy(request: NextRequest) {
         : pathname;
 
     const cookieValue = request.cookies.get(SESSION_OPTIONS.cookieName)?.value;
-    let session: Partial<SessionData> = {};
+    let session: SessionData = {};
     if (cookieValue) {
         try {
             session = await unsealData<SessionData>(cookieValue, {
@@ -34,7 +34,6 @@ export async function proxy(request: NextRequest) {
             });
         } catch {}
     }
-    console.log("session", session);
 
     if (cookieValue && !session.user) {
         const response = NextResponse.redirect(new URL(`${localePrefix}/login`, request.url));

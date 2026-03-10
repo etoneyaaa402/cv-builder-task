@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getIronSession } from "iron-session";
-import { cookies } from "next/headers";
 import { gqlRequest } from "@/lib/api/backend";
-import { SESSION_OPTIONS } from "@/lib/auth/tokens";
-import type { SessionData } from "@/types/auth";
+import { getSession } from "@/lib/auth/tokens";
 import type { AuthResult } from "@/generated/graphql";
 
 type AuthConfig = {
@@ -49,7 +46,7 @@ export function createAuthHandler(config: AuthConfig) {
 
         const { access_token, refresh_token, user } = result.data.data![config.resultKey];
 
-        const session = await getIronSession<SessionData>(await cookies(), SESSION_OPTIONS);
+        const session = await getSession();
         session.user = { id: user.id, email: user.email, role: user.role };
         session.accessToken = access_token;
         session.refreshToken = refresh_token;

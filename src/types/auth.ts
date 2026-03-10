@@ -7,7 +7,7 @@ export type SessionUser = {
 };
 
 export type SessionData = {
-    user: SessionUser;
-    accessToken: string;
-    refreshToken: string;
+    user?: SessionUser;
+    accessToken?: string;
+    refreshToken?: string;
 };
