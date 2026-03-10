@@ -9,9 +9,7 @@ const config: CodegenConfig = {
             plugins: ["typescript", "typescript-operations", "typescript-react-query"],
             config: {
                 withHooks: true,
-                fetcher: {
-                    endpoint: "http://localhost:3001/api/graphql",
-                },
+                fetcher: "./src/lib/graphql/fetcher#fetcher",
             },
         },
     },
