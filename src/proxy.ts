@@ -9,9 +9,6 @@ import type { SessionData } from "@/types/auth";
 
 const intlMiddleware = createIntlMiddleware(routing);
 
-// Extract the locale segment from the pathname (e.g. "/pl/profile" → "/pl").
-// With localePrefix "as-needed", the default locale has no prefix, so this
-// returns "" for default-locale paths and "/<locale>" for all others.
 const nonDefaultLocales = routing.locales.filter((l) => l !== routing.defaultLocale);
 const localePattern = new RegExp(`^\\/(${nonDefaultLocales.join("|")})(?=\\/|$)`);
 
@@ -35,17 +32,12 @@ export async function proxy(request: NextRequest) {
             session = await unsealData<SessionData>(cookieValue, {
                 password: process.env.SESSION_SECRET!,
             });
-        } catch {
-            // Tampered or expired cookie — treat as unauthenticated
-        }
+        } catch {}
     }
+    console.log("session", session);
 
-    // Cookie exists but session data is gone (e.g. corrupted payload) — purge it
-    // and redirect to login so the user gets a clean state.
     if (cookieValue && !session.user) {
-        const response = NextResponse.redirect(
-            new URL(`${localePrefix}/login`, request.url),
-        );
+        const response = NextResponse.redirect(new URL(`${localePrefix}/login`, request.url));
         response.cookies.delete(SESSION_OPTIONS.cookieName);
         return response;
     }
@@ -71,6 +63,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-    // Exclude: Next.js internals, static files, and API routes (they handle their own auth)
     matcher: ["/((?!_next|_vercel|api|.*\\..*).*)"],
 };
